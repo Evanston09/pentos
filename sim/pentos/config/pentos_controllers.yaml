@@ -1,0 +1,17 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+    pentos_position_controller:
+      type: position_controllers/JointGroupPositionController
+
+pentos_position_controller:
+  ros__parameters:
+    joints:
+      - x_axis_0
+      - y_axis_0
+      - z_axis_0
+      - a_axis_0
+      - b_axis_0
+    interface_name: position

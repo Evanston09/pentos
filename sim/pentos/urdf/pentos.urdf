@@ -9,7 +9,7 @@
         <visual>
             <origin xyz="0.1 3.46945e-18 -0.052" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="file:///workspaces/pentos/pentos/meshes/A Axis.gltf" scale="1 1 1" />
+                <mesh filename="package://pentos/meshes/A Axis.gltf" scale="1 1 1" />
             </geometry>
             <material name="0.615686_0.811765_0.929412_0.000000_0.000000">
                 <texture />
@@ -19,7 +19,7 @@
         <collision>
             <origin xyz="0.1 3.46945e-18 -0.052" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="file:///workspaces/pentos/pentos/meshes/A Axis.gltf" scale="1 1 1" />
+                <mesh filename="package://pentos/meshes/A Axis.gltf" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -32,7 +32,7 @@
         <visual>
             <origin xyz="-1.15648e-18 6.8104e-18 0" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="file:///workspaces/pentos/pentos/meshes/B Axis.gltf" scale="1 1 1" />
+                <mesh filename="package://pentos/meshes/B Axis.gltf" scale="1 1 1" />
             </geometry>
             <material name="0.615686_0.811765_0.929412_0.000000_0.000000">
                 <texture />
@@ -42,7 +42,7 @@
         <collision>
             <origin xyz="-1.15648e-18 6.8104e-18 0" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="file:///workspaces/pentos/pentos/meshes/B Axis.gltf" scale="1 1 1" />
+                <mesh filename="package://pentos/meshes/B Axis.gltf" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -55,7 +55,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="file:///workspaces/pentos/pentos/meshes/Frame.gltf" scale="1 1 1" />
+                <mesh filename="package://pentos/meshes/Frame.gltf" scale="1 1 1" />
             </geometry>
             <material name="0.615686_0.811765_0.929412_0.000000_0.000000">
                 <texture />
@@ -65,7 +65,7 @@
         <collision>
             <origin xyz="0 0 0" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="file:///workspaces/pentos/pentos/meshes/Frame.gltf" scale="1 1 1" />
+                <mesh filename="package://pentos/meshes/Frame.gltf" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -79,7 +79,7 @@
         <visual>
             <origin xyz="-0.04 -0.025 -0.02" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="file:///workspaces/pentos/pentos/meshes/X Carriage.gltf" scale="1 1 1" />
+                <mesh filename="package://pentos/meshes/X Carriage.gltf" scale="1 1 1" />
             </geometry>
             <material name="0.615686_0.811765_0.929412_0.000000_0.000000">
                 <texture />
@@ -89,7 +89,7 @@
         <collision>
             <origin xyz="-0.04 -0.025 -0.02" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="file:///workspaces/pentos/pentos/meshes/X Carriage.gltf" scale="1 1 1" />
+                <mesh filename="package://pentos/meshes/X Carriage.gltf" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -102,7 +102,7 @@
         <visual>
             <origin xyz="0.165 -0.02 -0.02" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="file:///workspaces/pentos/pentos/meshes/X Gantry.gltf" scale="1 1 1" />
+                <mesh filename="package://pentos/meshes/X Gantry.gltf" scale="1 1 1" />
             </geometry>
             <material name="0.615686_0.811765_0.929412_0.000000_0.000000">
                 <texture />
@@ -112,7 +112,7 @@
         <collision>
             <origin xyz="0.165 -0.02 -0.02" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="file:///workspaces/pentos/pentos/meshes/X Gantry.gltf" scale="1 1 1" />
+                <mesh filename="package://pentos/meshes/X Gantry.gltf" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -125,7 +125,7 @@
         <visual>
             <origin xyz="-0.02 3.46945e-18 0" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="file:///workspaces/pentos/pentos/meshes/Y Gantry.gltf" scale="1 1 1" />
+                <mesh filename="package://pentos/meshes/Y Gantry.gltf" scale="1 1 1" />
             </geometry>
             <material name="0.615686_0.811765_0.929412_0.000000_0.000000">
                 <texture />
@@ -135,49 +135,84 @@
         <collision>
             <origin xyz="-0.02 3.46945e-18 0" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="file:///workspaces/pentos/pentos/meshes/Y Gantry.gltf" scale="1 1 1" />
+                <mesh filename="package://pentos/meshes/Y Gantry.gltf" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
+    <joint name="a_axis_0" type="continuous">
+        <origin xyz="-0.02 0.1 0.082" rpy="3.46945e-16 -4.66567e-16 -1.5708" />
+        <axis xyz="-1 0 0" />
+        <parent link="y_gantry" />
+        <child link="a_axis" />
+    </joint>
+    <joint name="b_axis_0" type="continuous">
+        <origin xyz="0.1 -1.4456e-17 -0.047" rpy="-2.72712e-31 6.93889e-18 1.5708" />
+        <axis xyz="0 0 -1" />
+        <parent link="a_axis" />
+        <child link="b_axis" />
+    </joint>
     <joint name="fixed_node_to_root_joint_0" type="fixed">
         <origin xyz="0 0 0" rpy="0 -0 0" />
         <axis xyz="0 0 1" />
         <parent link="root" />
         <child link="frame" />
     </joint>
-    <joint name="revolute_1_0" type="continuous">
-        <origin xyz="-0.02 0.1 0.082" rpy="0.299926 5.55112e-17 -1.5708" />
-        <axis xyz="-1 0 0" />
-        <parent link="y_gantry" />
-        <child link="a_axis" />
-    </joint>
-    <joint name="revolute_2_0" type="continuous">
-        <origin xyz="0.1 1.38778e-17 -0.047" rpy="0 -0 1.5708" />
-        <axis xyz="0 0 -1" />
-        <parent link="a_axis" />
-        <child link="b_axis" />
-    </joint>
-    <joint name="slider_1_0" type="prismatic">
-        <origin xyz="0.02 -3.71726e-19 0.08" rpy="0 -0 5.45199e-16" />
-        <axis xyz="3.46945e-16 1 0" />
-        <parent link="frame" />
-        <child link="y_gantry" />
-        <limit effort="1" velocity="1" lower="-10000" upper="10000" />
-    </joint>
-    <joint name="slider_2_0" type="prismatic">
-        <origin xyz="-0.165 0.02 0.28" rpy="-6.50521e-17 5.78241e-17 -3.76158e-33" />
-        <axis xyz="0 0 -1" />
-        <parent link="frame" />
-        <child link="x_gantry" />
-        <limit effort="1" velocity="1" lower="-10000" upper="10000" />
-    </joint>
-    <joint name="slider_3_0" type="prismatic">
-        <origin xyz="0.137 0.005 0.02" rpy="0 -0 1.88079e-33" />
+    <joint name="x_axis_0" type="prismatic">
+        <origin xyz="0.165 0.005 0.02" rpy="0 -0 3.42114e-49" />
         <axis xyz="-1 0 0" />
         <parent link="x_gantry" />
         <child link="x_carriage" />
         <limit effort="1" velocity="1" lower="-10000" upper="10000" />
     </joint>
+    <joint name="y_axis_0" type="prismatic">
+        <origin xyz="0.02 0.17 0.08" rpy="0 -0 1.98254e-16" />
+        <axis xyz="3.46945e-16 1 0" />
+        <parent link="frame" />
+        <child link="y_gantry" />
+        <limit effort="1" velocity="1" lower="-10000" upper="10000" />
+    </joint>
+    <joint name="z_axis_0" type="prismatic">
+        <origin xyz="-0.165 0.02 0.203" rpy="-6.50521e-17 5.78241e-17 -3.76158e-33" />
+        <axis xyz="0 0 -1" />
+        <parent link="frame" />
+        <child link="x_gantry" />
+        <limit effort="1" velocity="1" lower="-10000" upper="10000" />
+    </joint>
+    <ros2_control name="GazeboSimSystem" type="system">
+        <hardware>
+            <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+        </hardware>
+        <joint name="x_axis_0">
+            <command_interface name="position" />
+            <state_interface name="position" />
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="y_axis_0">
+            <command_interface name="position" />
+            <state_interface name="position" />
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="z_axis_0">
+            <command_interface name="position" />
+            <state_interface name="position" />
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="a_axis_0">
+            <command_interface name="position" />
+            <state_interface name="position" />
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="b_axis_0">
+            <command_interface name="position" />
+            <state_interface name="position" />
+            <state_interface name="velocity" />
+        </joint>
+    </ros2_control>
+    <gazebo>
+        <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+            <parameters>$(find pentos)/config/pentos_controllers.yaml</parameters>
+        </plugin>
+    </gazebo>
     <gazebo reference="a_axis">
         <self_collide>true</self_collide>
     </gazebo>
