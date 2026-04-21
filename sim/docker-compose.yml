@@ -10,13 +10,3 @@ services:
       DISPLAY: ${DISPLAY}
     volumes:
       - .:/workspaces/pentos
-
-  gazebo:
-    image: ghcr.io/openrobotics/gazebo:jetty-full
-    command: gz sim -v
-    user: "${UID:-1000}:${GID:-1000}"
-    network_mode: host
-    environment:
-      DISPLAY: ${DISPLAY}
-    volumes:
-      - .:/workspaces/pentos
