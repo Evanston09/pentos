@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import tempfile
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
@@ -14,11 +15,28 @@ def _prepend_env_path(value: str, existing: str) -> str:
     return f"{value}{os.pathsep}{existing}"
 
 
+def _render_urdf(urdf_path: Path, config_path: Path) -> tuple[str, str]:
+    robot_description = urdf_path.read_text(encoding="utf-8").replace(
+        "$(find pentos)/config/pentos_controllers.yaml",
+        str(config_path),
+    )
+    with tempfile.NamedTemporaryFile(
+        mode="w",
+        encoding="utf-8",
+        prefix="pentos_",
+        suffix=".urdf",
+        delete=False,
+    ) as rendered_urdf:
+        rendered_urdf.write(robot_description)
+    return robot_description, rendered_urdf.name
+
+
 def generate_launch_description() -> LaunchDescription:
     pkg_share = Path(get_package_share_directory("pentos"))
     ros_gz_share = Path(get_package_share_directory("ros_gz_sim"))
     urdf_path = pkg_share / "urdf" / "pentos.urdf"
-    robot_description = urdf_path.read_text(encoding="utf-8")
+    config_path = pkg_share / "config" / "pentos_controllers.yaml"
+    robot_description, rendered_urdf_path = _render_urdf(urdf_path, config_path)
 
     resource_path = _prepend_env_path(str(pkg_share), os.environ.get("GZ_SIM_RESOURCE_PATH", ""))
     gz_launch = ros_gz_share / "launch" / "gz_sim.launch.py"
@@ -68,7 +86,7 @@ def generate_launch_description() -> LaunchDescription:
                             "-name",
                             "pentos",
                             "-file",
-                            str(urdf_path),
+                            rendered_urdf_path,
                             "-z",
                             "0.05",
                         ],
