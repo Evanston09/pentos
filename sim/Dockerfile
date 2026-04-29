@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-${ROS_DISTRO}-ros2-controllers \
     ros-${ROS_DISTRO}-robot-state-publisher \
     ros-${ROS_DISTRO}-ros-gz-bridge \
+    tmux \
  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /workspaces/pentos

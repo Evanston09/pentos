@@ -35,17 +35,17 @@ def as_float_sequence(value: Any, min_length: int) -> list[float] | None:
 def extract_klipper_xyz(status: dict[str, Any]) -> list[float] | None:
     """Extract XYZ in millimeters from a Moonraker status payload."""
 
-    motion_report = status.get("motion_report")
-    if isinstance(motion_report, dict):
-        live_position = as_float_sequence(motion_report.get("live_position"), 3)
-        if live_position is not None:
-            return live_position
-
     toolhead = status.get("toolhead")
     if isinstance(toolhead, dict):
         position = as_float_sequence(toolhead.get("position"), 3)
         if position is not None:
             return position
+
+    motion_report = status.get("motion_report")
+    if isinstance(motion_report, dict):
+        live_position = as_float_sequence(motion_report.get("live_position"), 3)
+        if live_position is not None:
+            return live_position
 
     return None
 
@@ -95,4 +95,3 @@ def extract_status_update(message: dict[str, Any]) -> dict[str, Any] | None:
             return status
 
     return None
-

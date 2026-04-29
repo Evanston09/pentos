@@ -87,7 +87,7 @@ class MoonrakerPositionClient:
             try:
                 await self._connect_once()
             except Exception as exc:  # pragma: no cover - network integration
-                self.logger.warning("Moonraker websocket disconnected: %s", exc)
+                self.logger.warning(f"Moonraker websocket disconnected: {exc}")
             self._set_connected(False)
             await asyncio.sleep(self.reconnect_delay)
 
@@ -95,7 +95,7 @@ class MoonrakerPositionClient:
         assert websockets is not None
         async with websockets.connect(self.url) as websocket:
             self._set_connected(True)
-            self.logger.info("Connected to Moonraker at %s", self.url)
+            self.logger.info(f"Connected to Moonraker at {self.url}")
             await websocket.send(json.dumps(subscription_request()))
             while not self._stop_event.is_set():
                 try:

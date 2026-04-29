@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+*.pyc
+
+# Local runtime data for the containerized Moonraker/Fluidd setup.
+printer_data/run/*
+printer_data/gcodes/*
+printer_data/logs/*
+printer_data/database/*
+printer_data/backup/*
+printer_data/certs/*
+printer_data/comms/*
+printer_data/misc/*
+!printer_data/config/
+!printer_data/config/moonraker.conf
+
+# Local external checkout used for experimentation.
+moonraker/

@@ -1,0 +1,16 @@
+services:
+  moonraker:
+    image: mkuf/moonraker:latest
+    restart: unless-stopped
+    ports:
+      - "7125:7125"
+    volumes:
+      - ./printer_data:/opt/printer_data
+      - ./printer_data/config:/opt/printer_data/config
+      - ./printer_data/database:/opt/printer_data/database
+      - ./printer_data/gcodes:/opt/printer_data/gcodes
+      - ./printer_data/logs:/opt/printer_data/logs
+      - ./printer_data/run:/opt/printer_data/run
+      # Also expose printer_data at the host path Klippy reports. This keeps
+      # Moonraker's path validation happy while Klippy runs outside Docker.
+      - ./printer_data:/home/evank/code/rphys/pentos/printer_data
