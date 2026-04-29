@@ -1,11 +1,19 @@
-from pathlib import Path
 import os
 import tempfile
+from pathlib import Path
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import ExecuteProcess, IncludeLaunchDescription, SetEnvironmentVariable, TimerAction
+from launch.actions import (
+    DeclareLaunchArgument,
+    ExecuteProcess,
+    IncludeLaunchDescription,
+    SetEnvironmentVariable,
+    TimerAction,
+)
+from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
 
@@ -38,11 +46,38 @@ def generate_launch_description() -> LaunchDescription:
     config_path = pkg_share / "config" / "pentos_controllers.yaml"
     robot_description, rendered_urdf_path = _render_urdf(urdf_path, config_path)
 
-    resource_path = _prepend_env_path(str(pkg_share), os.environ.get("GZ_SIM_RESOURCE_PATH", ""))
+    resource_path = _prepend_env_path(
+        str(pkg_share), os.environ.get("GZ_SIM_RESOURCE_PATH", "")
+    )
     gz_launch = ros_gz_share / "launch" / "gz_sim.launch.py"
 
     return LaunchDescription(
         [
+            DeclareLaunchArgument(
+                "enable_klipper_bridge",
+                default_value="false",
+                description="Start the read-only Moonraker-to-Gazebo bridge.",
+            ),
+            DeclareLaunchArgument(
+                "moonraker_url",
+                default_value="ws://127.0.0.1:7125/websocket",
+                description="Moonraker websocket URL reachable from the ROS container.",
+            ),
+            DeclareLaunchArgument(
+                "publish_rate_hz",
+                default_value="20.0",
+                description="Gazebo command publish rate for Klipper bridge.",
+            ),
+            DeclareLaunchArgument(
+                "a_default",
+                default_value="0.0",
+                description="Fixed A-axis joint command for XYZ-only bridge mode.",
+            ),
+            DeclareLaunchArgument(
+                "b_default",
+                default_value="0.0",
+                description="Fixed B-axis joint command for XYZ-only bridge mode.",
+            ),
             SetEnvironmentVariable("GZ_SIM_RESOURCE_PATH", resource_path),
             Node(
                 package="robot_state_publisher",
@@ -119,6 +154,32 @@ def generate_launch_description() -> LaunchDescription:
                         ],
                         output="screen",
                     ),
+                ],
+            ),
+            TimerAction(
+                period=8.0,
+                actions=[
+                    Node(
+                        package="pentos",
+                        executable="klipper_gazebo_bridge",
+                        name="klipper_gazebo_bridge",
+                        output="screen",
+                        condition=IfCondition(
+                            LaunchConfiguration("enable_klipper_bridge")
+                        ),
+                        parameters=[
+                            {
+                                "moonraker_url": LaunchConfiguration(
+                                    "moonraker_url"
+                                ),
+                                "publish_rate_hz": LaunchConfiguration(
+                                    "publish_rate_hz"
+                                ),
+                                "a_default": LaunchConfiguration("a_default"),
+                                "b_default": LaunchConfiguration("b_default"),
+                            }
+                        ],
+                    )
                 ],
             ),
         ]
