@@ -94,7 +94,7 @@ Use three terminals.
 
 ```bash
 cd /home/evank/code/rphys/pentos/klipper
-uv run --no-sync python klippy/klippy.py ../klipper_config/sim-printer.cfg \
+uv run python klippy/klippy.py ../klipper_config/sim-printer.cfg \
   -I /tmp/pentos_printer \
   -a /home/evank/code/rphys/pentos/printer_data/run/klipper.sock \
   -l /home/evank/code/rphys/pentos/printer_data/logs/klippy.log \
