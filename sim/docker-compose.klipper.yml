@@ -1,0 +1,22 @@
+services:
+  klipper:
+    image: mkuf/klipper:latest
+    privileged: true
+    restart: unless-stopped
+    volumes:
+      - /dev:/dev
+      - ./printer_data/config:/opt/printer_data/config
+      - ./printer_data/run:/opt/printer_data/run
+      - ./printer_data/gcodes:/opt/printer_data/gcodes
+      - ./printer_data/logs:/opt/printer_data/logs
+
+  moonraker:
+    image: mkuf/moonraker:latest
+    restart: unless-stopped
+    ports:
+      - "7125:7125"
+    volumes:
+      - ./printer_data/config:/opt/printer_data/config
+      - ./printer_data/run:/opt/printer_data/run
+      - ./printer_data/gcodes:/opt/printer_data/gcodes
+      - ./printer_data/logs:/opt/printer_data/logs

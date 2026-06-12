@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Source this file from an interactive container shell:
-#   source sim/scripts/source_pentos.bash
+#   source sim/ros/scripts/source_pentos.bash
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   echo "This script must be sourced so the ROS environment stays active:"

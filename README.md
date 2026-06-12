@@ -4,15 +4,15 @@ A research project proposal developing an accessible, fully open-source pathway 
 
 ## ROS 2 Simulation
 
-The ROS 2 workspace lives under [`sim/`](/home/evank/code/rphys/pentos/sim), not the repository root.
+The ROS 2 workspace lives under [`sim/ros/`](/home/evank/code/rphys/pentos/sim/ros), not the repository root.
 
-For the complete Klippy fake-MCU, Moonraker, ROS bridge, and Gazebo workflow,
-see [`docs/sim-klipper-moonraker.md`](docs/sim-klipper-moonraker.md).
+For the Docker Klipper, Moonraker, ROS bridge, and Gazebo workflow, see
+[`sim/docs/sim-klipper-moonraker.md`](sim/docs/sim-klipper-moonraker.md).
 
 Build and launch from that directory:
 
 ```bash
-cd sim
+cd sim/ros
 source /opt/ros/${ROS_DISTRO:-jazzy}/setup.bash
 colcon build --symlink-install --base-paths pentos
 source install/setup.bash
