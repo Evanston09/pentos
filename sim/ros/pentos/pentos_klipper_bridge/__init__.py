@@ -1,2 +1,0 @@
-"""Pentos ROS package helpers."""
-
