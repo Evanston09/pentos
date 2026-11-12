@@ -1,0 +1,74 @@
+{
+  "a-axis-cradle": {
+    "pause_z": 14.4,
+    "preview_layer": 108,
+    "object_layer": 72,
+    "last_open_z": 14.2,
+    "last_open_preview_layer": 106,
+    "last_open_object_layer": 71,
+    "pocket_min": [
+      106.80000000000001,
+      -20.1,
+      1.9
+    ],
+    "pocket_max": [
+      110.0,
+      -7.899990000000001,
+      14.1
+    ],
+    "pocket_center": [
+      108.4,
+      -13.999995000000002,
+      8.0
+    ],
+    "print_size": [
+      210.0,
+      76.65,
+      73.5
+    ],
+    "gcode_center": [
+      212.4,
+      99.325005
+    ],
+    "sensor_face": "+X / outer end of cradle",
+    "source_sha256": "f9e8de4f103ddc3497c8ec112bb437acafe3b6930c77678016956336c7f04b91",
+    "support": "build-plate-only snug",
+    "prusa_version": "2.9.6"
+  },
+  "b-axis-base": {
+    "pause_z": 4.2,
+    "preview_layer": 21,
+    "object_layer": 21,
+    "last_open_z": 4.0,
+    "last_open_preview_layer": 20,
+    "last_open_object_layer": 20,
+    "pocket_min": [
+      -31.099999999999998,
+      -6.09105,
+      0.8
+    ],
+    "pocket_max": [
+      -18.9,
+      6.1000000000000005,
+      4.0
+    ],
+    "pocket_center": [
+      -25.0,
+      0.004475000000000229,
+      2.4
+    ],
+    "print_size": [
+      70.0,
+      70.0,
+      5.0
+    ],
+    "gcode_center": [
+      85.0,
+      110.004475
+    ],
+    "sensor_face": "-Z / toward print bed",
+    "source_sha256": "6b799972101b91e3bd267b91853d02a40ddca56d66ad1f78667ed22559e6f5e1",
+    "support": "none",
+    "prusa_version": "2.9.6"
+  }
+}

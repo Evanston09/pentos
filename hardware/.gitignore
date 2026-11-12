@@ -1,0 +1,7 @@
+# Local build intermediates
+/tmp/
+__pycache__/
+*.pyc
+
+# Blender automatic backups
+*.blend[0-9]

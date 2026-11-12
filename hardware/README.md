@@ -1,21 +1,83 @@
-# 5 Axis 3D Printer BOM
+# Pentos Hardware Bill of Materials
 
-| Item | Link | Qty | Unit Price | Line Total | Status | Notes |
-| --- | --- | ---: | ---: | ---: | --- | --- |
-| Gates PowerGrip 2GT Pulley - 20 Tooth - 5mm - 6mm | [Link](https://kb-3d.com/store/motion/213-gates-powergrip-2gt-pulley-20-tooth-5mm-6mm-1634481851944.html) | 2 | $3.99 | $7.98 | Don't Have |  |
-| 8mm REX Shaft with E-Clip (Stainless Steel, 32mm Length) | [Link](https://www.gobilda.com/8mm-rex-shaft-with-e-clip-stainless-steel-32mm-length/) | 2 | $3.89 | $7.78 |  | Have one that is longer which would work but need one exactly 32mm |
-| 2910 Series Aluminum Clamping Collar (8mm REX ID x 20mm OD, 9mm Length) | [Link](https://www.gobilda.com/2910-series-aluminum-clamping-collar-8mm-rex-id-x-20mm-od-9mm-length/) | 2 | $4.99 | $9.98 | Have | Have sonic hubs that should work for this work case |
-| LDO Stepper Motor - Nema 17 - 42STH48-1684MAC | [Link](https://kb-3d.com/store/stepper-motors-servos/64-ldo-stepper-motor-nema-17-42sth48-1684mac-1642876248477.html) | 2 | $19.49 | $38.98 | Don't Have |  |
-| 16mm Silicon Spacers | [Link](https://www.amazon.com/Printer-Silicone-Leveling-Heat-Resistant-Spacers/dp/B0D53VB522?source=ps-sl-shoppingads-lpcontext&psc=1&smid=A2MQNO48UKTHCG) | 1 | $8.99 | $8.99 | Don't Have |  |
-| Prusa Research Heatbed Tile | [Link](https://www.prusa3d.com/product/heatbed-tile/) | 1 | $24.99 | $24.99 | Have |  |
-| 2mm Pitch GT2 Pinion Timing Pulley (8mm REX Bore, 20 Tooth) | [Link](https://www.gobilda.com/2mm-pitch-gt2-pinion-timing-pulley-8mm-rex-bore-20-tooth/) | 1 | $7.99 | $7.99 |  |  |
-| REV-41-1489-PK4 M3 Standoff - 15mm - 4 Pack | [Link](https://www.revrobotics.com/M3-Standoffs/) | 1 | $3.00 | $3.00 | Don't Have |  |
-| 2mm Pitch GT2 Pinion Timing Pulley (8mm REX Bore, 40 Tooth) | [Link](https://www.gobilda.com/2mm-pitch-gt2-pinion-timing-pulley-8mm-rex-bore-40-tooth/) | 1 | $8.99 | $8.99 |  |  |
-| 2mm Pitch GT2 Timing Belt (6mm Width, 88mm Pitch Length, 44 Tooth) | [Link](https://www.gobilda.com/2mm-pitch-gt2-timing-belt-6mm-width-88mm-pitch-length-44-tooth/) | 2 | $1.49 | $2.98 |  |  |
-| 1611 Series Flanged Ball Bearing (8mm REX ID x 14mm OD, 5mm Thickness) - 2 Pack | [Link](https://www.gobilda.com/1611-series-flanged-ball-bearing-8mm-rex-id-x-14mm-od-5mm-thickness-2-pack/) | 2 | $5.99 | $11.98 | Have |  |
-| 8mm REX Shaft with E-Clip (Stainless Steel, 52mm Length) | [Link](https://www.gobilda.com/8mm-rex-shaft-with-e-clip-stainless-steel-52mm-length/) | 1 | $4.39 | $4.39 | Have | Too long but should work |
-| Any Klipper Capable Mainboard | N/A | 1 | ? | ? | Don't Have |  |
-| Any Klipper Capable Computer | N/A | 1 | ? | ? |  |  |
-| Custom PEI Sheet | TBD | 1 | TBD | TBD |  |  |
+[Illustrated assembly manual (PDF)](pentos-assembly-manual.pdf) | [Manual sources and rebuild instructions](manual/README.md)
 
-**Known subtotal:** $138.03
+BOM transcribed from the **Bill of Materials** section (`tab:bom`) in
+[the Pentos paper](../../pentos_paper/main.tex). Costs are the paper’s estimates in USD,
+not current supplier quotes. Pack costs are prorated to the quantities used;
+shipping and tax are excluded. Supplied hardware is valued at estimated replacement cost.
+
+## Retrofit parts
+
+| Components and quantities | Supplier / brand | Cost |
+| --- | --- | ---: |
+| Pulleys and belts: 2 PowerGrip 2GT pulleys, 20T, 5mm bore, 6mm belt ($3.99 each); GT2 pulleys, 2mm pitch, 8mm REX bore: 1 each, 20T ($7.99) and 40T ($9.99); 2 GT2 belts, 6mm wide, 184mm pitch length, 92T ($3.19 each). | Gates; goBILDA | $32.34 |
+| Shafts: stainless-steel 8mm REX with E-clips; 2 × 32mm ($3.89 each), 1 × 52mm ($4.39). | goBILDA | $12.17 |
+| Hubs: 2 × 1309 Series Sonic Hub, 8mm REX bore ($7.99 each). | goBILDA | $15.98 |
+| Bearings: 2 packs of 1611 flanged bearings, 8mm REX ID, 14mm OD, 5mm thick, 2 per pack ($5.99/pack); 1 thrust bearing, 12mm ID, 21mm OD, 5mm thick ($4.99). | goBILDA | $16.97 |
+| Motors: 2 × NEMA 17, 42STH48-1684MAC ($19.49 each). | LDO | $38.98 |
+| Mounting hardware: 4 silicone spacers ($3.00; a 12-pack costs $8.99); 4 M3 standoffs, 15mm ($2.85; one 4-pack); 8 M4 heat-set inserts ($1.74; a 50-pack costs $10.90). | Amazon; REV Robotics; CNC Kitchen | $7.59 |
+| Screws: 8 M4 × 12mm; 1 M3 × 8mm; 4 M3 × 35mm; 1 M4 × 16mm. | Bolts and Nuts | $2.56 |
+| Heated platform: 1 heatbed tile ($24.99); 1 Garolite plate, 90 × 90mm ($0.65; two 12 × 12in sheets cost $15). | Prusa Research; Amazon | $25.64 |
+| Printed structure: 125g PLA, including fabrication supports ($2.25; filament costs $17.99/kg). | PLA filament | $2.25 |
+| Connector: 1 Clickmate, 4-pin, 1.5mm pitch, 0151350402. | Molex | $3.69 |
+| JST connectors: 4 XHP-3 housings; 1 XHP-2 housing; 14 crimp contacts. | JST | $2.13 |
+| Wire: 21.5ft of 22 AWG stranded wire ($4.71; a 50ft spool costs $10.95). | Pololu | $4.71 |
+| **Retrofit-parts subtotal** | | **$165.01** |
+
+## Supplied hardware: estimated replacement costs
+
+| Components and quantities | Supplier / brand | Cost |
+| --- | --- | ---: |
+| Base printer: 1 Ender 3 or compatible clone (budget allocation). | Creality / clone | $150.00 |
+| Controller: 1 SKR 1.4 Turbo with 5 TMC2208 drivers. | BIGTREETECH | $65.79 |
+| Host: 1 Pi 4 Model B, 4GB, board only. | Raspberry Pi | $100.00 |
+| Homing components: 2 magnets, 12 × 3mm ($0.67; a 30-pack costs $9.99); 2 A3144 Hall-effect sensors ($1.30; a 10-pack costs $6.49). | Amazon | $1.97 |
+| **Total including retrofit parts** | | **$482.77** |
+
+The total excluding the base printer is **$332.77**.
+
+## Printed parts
+
+The files below are the available printed components. Quantities are assumed to be
+one of each per build; confirm against the assembly before printing. The paper budgets
+**125 g of PLA including fabrication supports ($2.25)** for the complete printed
+structure. That cost is already included above; individual part masses are not specified.
+
+| Part | Qty per build (assumed) | Printable model | STEP model |
+| --- | ---: | --- | --- |
+| A-axis cradle | 1 | [3MF](printable-parts/a-axis-cradle.3mf) | [STEP](cad/a-axis-cradle.step) |
+| A-axis holder, back | 1 | [3MF](printable-parts/a-axis-holder-back.3mf) | [STEP](cad/a-axis-holder-back.step) |
+| A-axis holder, front | 1 | [3MF](printable-parts/a-axis-holder-front.3mf) | [STEP](cad/a-axis-holder-front.step) |
+| B-axis base | 1 | [3MF](printable-parts/b-axis-base.3mf) | Not included |
+
+Garolite cost is based on plate area and excludes cutting waste.
+
+## Assembly notes
+
+Before assembly, embed both homing magnets during printing. Add slicer pause
+commands immediately before the layers that close their pockets, place each
+magnet with the correct polarity, and resume printing to enclose it.
+
+At 0.20 mm first and object layers, the verified first-cover heights are
+Z 14.40 mm for the A cradle and Z 4.20 mm for the B base. See the
+[PrusaSlicer reference projects and settings](manual/slicing/README.md).
+Test each magnet with its Hall sensor, mark the working face, and recheck
+polarity at the pause before resuming.
+
+Assembly references use **A-axis for tilt** and **B-axis for rotation**, including
+when the STEP assembly's internal part names use U and V.
+
+Fastener locations clarified by the builder:
+
+| Fastener | Location / purpose |
+| --- | --- |
+| M3 × 8 mm | Sonic Hub hardware, as specified by the builder; separate from the M4 cradle attachment screws. |
+| M4 × 12 mm | Four cradle attachment screws per Sonic Hub (eight total), matching the CAD mounting holes. |
+| M3 bed screws | Bed attachment; the paper lists four M3 × 35 mm screws. |
+| Short M3 screws | Motor mounting: four per motor in the assembly drawings. Exact length and quantity are not specified in the paper. |
+| Longer M4 screw | Installed underneath the bed to attach the pulley and sandwich the A-axis cradle with the B-axis bed; the paper lists one M4 × 16 mm screw. |
+| Pulley grub screws | Supplied with the pulleys. |
+
+These location notes supplement the paper's BOM. Motor mounting screws need to be
+accounted for separately because the paper does not list them explicitly.
