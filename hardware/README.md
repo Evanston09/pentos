@@ -1,83 +1,99 @@
-# Pentos Hardware Bill of Materials
+# Pentos hardware
 
-[Illustrated assembly manual (PDF)](pentos-assembly-manual.pdf) | [Manual sources and rebuild instructions](manual/README.md)
+Pentos adds a tilting and rotating heated build platform to an Ender 3 V2 for
+five-axis FDM printing. **A** is tilt; **B** is rotation. This folder contains
+the printable parts, CAD assembly, bill of materials and assembly instructions.
 
-BOM transcribed from the **Bill of Materials** section (`tab:bom`) in
-[the Pentos paper](../../pentos_paper/main.tex). Costs are the paper’s estimates in USD,
-not current supplier quotes. Pack costs are prorated to the quantities used;
-shipping and tax are excluded. Supplied hardware is valued at estimated replacement cost.
+**[Assembly manual (PDF)](pentos-assembly-manual.pdf)** ·
+**[Bill of materials (CSV)](bom.csv)** ·
+**[Full STEP assembly](Pentos.step)** ·
+**[Pentos paper](https://github.com/Evanston09/pentos_paper)**
 
-## Retrofit parts
+## What to print
 
-| Components and quantities | Supplier / brand | Cost |
-| --- | --- | ---: |
-| Pulleys and belts: 2 PowerGrip 2GT pulleys, 20T, 5mm bore, 6mm belt ($3.99 each); GT2 pulleys, 2mm pitch, 8mm REX bore: 1 each, 20T ($7.99) and 40T ($9.99); 2 GT2 belts, 6mm wide, 184mm pitch length, 92T ($3.19 each). | Gates; goBILDA | $32.34 |
-| Shafts: stainless-steel 8mm REX with E-clips; 2 × 32mm ($3.89 each), 1 × 52mm ($4.39). | goBILDA | $12.17 |
-| Hubs: 2 × 1309 Series Sonic Hub, 8mm REX bore ($7.99 each). | goBILDA | $15.98 |
-| Bearings: 2 packs of 1611 flanged bearings, 8mm REX ID, 14mm OD, 5mm thick, 2 per pack ($5.99/pack); 1 thrust bearing, 12mm ID, 21mm OD, 5mm thick ($4.99). | goBILDA | $16.97 |
-| Motors: 2 × NEMA 17, 42STH48-1684MAC ($19.49 each). | LDO | $38.98 |
-| Mounting hardware: 4 silicone spacers ($3.00; a 12-pack costs $8.99); 4 M3 standoffs, 15mm ($2.85; one 4-pack); 8 M4 heat-set inserts ($1.74; a 50-pack costs $10.90). | Amazon; REV Robotics; CNC Kitchen | $7.59 |
-| Screws: 8 M4 × 12mm; 1 M3 × 8mm; 4 M3 × 35mm; 1 M4 × 16mm. | Bolts and Nuts | $2.56 |
-| Heated platform: 1 heatbed tile ($24.99); 1 Garolite plate, 90 × 90mm ($0.65; two 12 × 12in sheets cost $15). | Prusa Research; Amazon | $25.64 |
-| Printed structure: 125g PLA, including fabrication supports ($2.25; filament costs $17.99/kg). | PLA filament | $2.25 |
-| Connector: 1 Clickmate, 4-pin, 1.5mm pitch, 0151350402. | Molex | $3.69 |
-| JST connectors: 4 XHP-3 housings; 1 XHP-2 housing; 14 crimp contacts. | JST | $2.13 |
-| Wire: 21.5ft of 22 AWG stranded wire ($4.71; a 50ft spool costs $10.95). | Pololu | $4.71 |
-| **Retrofit-parts subtotal** | | **$165.01** |
+Print **one of each** of these four parts:
 
-## Supplied hardware: estimated replacement costs
-
-| Components and quantities | Supplier / brand | Cost |
-| --- | --- | ---: |
-| Base printer: 1 Ender 3 or compatible clone (budget allocation). | Creality / clone | $150.00 |
-| Controller: 1 SKR 1.4 Turbo with 5 TMC2208 drivers. | BIGTREETECH | $65.79 |
-| Host: 1 Pi 4 Model B, 4GB, board only. | Raspberry Pi | $100.00 |
-| Homing components: 2 magnets, 12 × 3mm ($0.67; a 30-pack costs $9.99); 2 A3144 Hall-effect sensors ($1.30; a 10-pack costs $6.49). | Amazon | $1.97 |
-| **Total including retrofit parts** | | **$482.77** |
-
-The total excluding the base printer is **$332.77**.
-
-## Printed parts
-
-The files below are the available printed components. Quantities are assumed to be
-one of each per build; confirm against the assembly before printing. The paper budgets
-**125 g of PLA including fabrication supports ($2.25)** for the complete printed
-structure. That cost is already included above; individual part masses are not specified.
-
-| Part | Qty per build (assumed) | Printable model | STEP model |
+| Part | Quantity | Model | Embedded magnet |
 | --- | ---: | --- | --- |
-| A-axis cradle | 1 | [3MF](printable-parts/a-axis-cradle.3mf) | [STEP](cad/a-axis-cradle.step) |
-| A-axis holder, back | 1 | [3MF](printable-parts/a-axis-holder-back.3mf) | [STEP](cad/a-axis-holder-back.step) |
-| A-axis holder, front | 1 | [3MF](printable-parts/a-axis-holder-front.3mf) | [STEP](cad/a-axis-holder-front.step) |
-| B-axis base | 1 | [3MF](printable-parts/b-axis-base.3mf) | Not included |
+| A-axis cradle | 1 | [3MF](printable-parts/a-axis-cradle.3mf) | One 12 mm diameter x 3 mm disc |
+| A-axis holder, front / drive side | 1 | [3MF](printable-parts/a-axis-holder-front.3mf) | None |
+| A-axis holder, back | 1 | [3MF](printable-parts/a-axis-holder-back.3mf) | None |
+| B-axis bed base | 1 | [3MF](printable-parts/b-axis-base.3mf) | One 12 mm diameter x 3 mm disc |
 
-Garolite cost is based on plate area and excludes cutting waste.
+The paper budgets **125 g of PLA, including fabrication supports**, for the
+printed structure. Place the holders on their broad, flat triangular sides;
+place the cradle and bed base on their flat bases. The raw Onshape exports
+are Y-up; a +90-degree rotation about X puts that flat face on the print bed.
 
-## Assembly notes
+### Embed the magnets during printing
 
-Before assembly, embed both homing magnets during printing. Add slicer pause
-commands immediately before the layers that close their pockets, place each
-magnet with the correct polarity, and resume printing to enclose it.
+**Check polarity with the actual Hall sensor before insertion, mark the
+working face TO SENSOR, and check it again before resuming the print.**
+Confirm the homing input triggers near the magnet and releases when removed.
+The marked face points toward the cradle's outer end wall for A, and down
+toward the print bed for B. The manual shows both pocket orientations.
 
-At 0.20 mm first and object layers, the verified first-cover heights are
-Z 14.40 mm for the A cradle and Z 4.20 mm for the B base. See the
-[PrusaSlicer reference projects and settings](manual/slicing/README.md).
-Test each magnet with its Hall sensor, mark the working face, and recheck
-polarity at the pause before resuming.
+Use these pre-oriented PrusaSlicer reference projects for the two magnet parts:
 
-Assembly references use **A-axis for tilt** and **B-axis for rotation**, including
-when the STEP assembly's internal part names use U and V.
+| Part | Reference project | Pause before layer at Z | Object layer | Preview layer |
+| --- | --- | ---: | ---: | ---: |
+| A-axis cradle | [3MF with pause](manual/slicing/a-axis-cradle-magnet-pause.3mf) | **14.40 mm** | 72 | 108 |
+| B-axis bed base | [3MF with pause](manual/slicing/b-axis-base-magnet-pause.3mf) | **4.20 mm** | 21 | 21 |
 
-Fastener locations clarified by the builder:
+These heights use **0.20 mm first and subsequent object layers**, with no raft.
+The cradle reference uses build-plate-only snug supports; the bed base uses
+none. Support layers change the Preview numbering, so use **Z height** to
+locate the pause. Select your actual printer and filament, confirm its pause
+command, and re-slice before exporting G-code. At the pause, seat the magnet
+below the next toolpath, then resume to enclose it.
 
-| Fastener | Location / purpose |
+See [print settings and pause verification](manual/slicing/README.md) for details.
+
+## Bill of materials
+
+Download **[bom.csv](bom.csv)** for quantities, specifications, suppliers and
+estimated costs from the paper's [Bill of Materials table](https://github.com/Evanston09/pentos_paper/blob/main/main.tex).
+
+| Scope | Paper estimate (USD) |
+| --- | ---: |
+| Retrofit parts | $165.01 |
+| Priced-items total, including a $150 base-printer allocation | $482.77 |
+| Priced items excluding the base printer | $332.77 |
+
+These are the paper's reproduction estimates, not current quotes. Pack costs
+are prorated to the quantities used; shipping and tax are excluded. Supplied
+components are valued at estimated replacement cost. The CSV retains grouped
+prices for the screw assortment and JST connectors because the paper does not
+price those pieces individually. Each CSV cost is the **whole row's cost**;
+sum the `Cost_USD` column for the paper's priced-items total.
+
+Also account for **eight M3 motor-mounting screws** and hot glue for securing
+the Hall sensors. These are not separately priced in the paper; the motor
+screw length must suit the motor and printed mount. The mounting step reuses
+the printer's four original M4 countersunk bed screws and leveling knobs.
+
+## Assembly
+
+Follow the **[illustrated assembly manual](pentos-assembly-manual.pdf)** after
+printing the magnet-containing parts. It covers the bed, hubs, shafts and
+bearings, both belt drives, Hall sensors, and mounting the completed mechanism
+on the original Y gantry.
+
+The documented build uses an **Ender 3 V2** with a **170 x 170 mm** bed-mounting
+pattern. Other Ender 3 variants and clones require a geometry and clearance
+check. Keep the bed wiring clear of both drives and allow slack for tilt and
+rotation; B cannot rotate continuously because the bed has no slip ring.
+
+Printer configurations are in [klipper_configs](../klipper_configs/).
+
+## Files
+
+| Path | Contents |
 | --- | --- |
-| M3 × 8 mm | Sonic Hub hardware, as specified by the builder; separate from the M4 cradle attachment screws. |
-| M4 × 12 mm | Four cradle attachment screws per Sonic Hub (eight total), matching the CAD mounting holes. |
-| M3 bed screws | Bed attachment; the paper lists four M3 × 35 mm screws. |
-| Short M3 screws | Motor mounting: four per motor in the assembly drawings. Exact length and quantity are not specified in the paper. |
-| Longer M4 screw | Installed underneath the bed to attach the pulley and sandwich the A-axis cradle with the B-axis bed; the paper lists one M4 × 16 mm screw. |
-| Pulley grub screws | Supplied with the pulleys. |
-
-These location notes supplement the paper's BOM. Motor mounting screws need to be
-accounted for separately because the paper does not list them explicitly.
+| [pentos-assembly-manual.pdf](pentos-assembly-manual.pdf) | Illustrated print preparation and assembly guide |
+| [bom.csv](bom.csv) | BOM transcribed from the paper; one row per priced item or grouped set |
+| [Pentos.step](Pentos.step) | Complete CAD assembly |
+| [printable-parts/](printable-parts/) | Four printable 3MF models |
+| [cad/](cad/) | Individual STEP exports and the shaft E-clip reference |
+| [manual/slicing/](manual/slicing/) | PrusaSlicer reference projects and verified pause settings |
+| [manual/](manual/) | Blender scenes, render assets and [manual rebuild instructions](manual/README.md) |

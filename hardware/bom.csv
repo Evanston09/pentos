@@ -1,0 +1,26 @@
+Section,Category,Item,Specification,Quantity,Unit,Supplier,Cost_USD,Notes,Source_URL
+Retrofit parts,Pulleys and belts,PowerGrip 2GT pulley,20 teeth; 5 mm bore; 6 mm belt,2,each,Gates,7.98,$3.99 each,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Retrofit parts,Pulleys and belts,GT2 REX pulley,2 mm pitch; 8 mm REX bore; 20 teeth,1,each,goBILDA,7.99,,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Retrofit parts,Pulleys and belts,GT2 REX pulley,2 mm pitch; 8 mm REX bore; 40 teeth,1,each,goBILDA,9.99,,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Retrofit parts,Pulleys and belts,GT2 timing belt,6 mm wide; 184 mm pitch length; 92 teeth,2,each,goBILDA,6.38,$3.19 each,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Retrofit parts,Shafts,REX shaft with E-clip,Stainless steel; 8 mm diameter; 32 mm long,2,each,goBILDA,7.78,$3.89 each,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Retrofit parts,Shafts,REX shaft with E-clip,Stainless steel; 8 mm diameter; 52 mm long,1,each,goBILDA,4.39,,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Retrofit parts,Hubs,1309 Series Sonic Hub,8 mm REX bore,2,each,goBILDA,15.98,$7.99 each,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Retrofit parts,Bearings,1611 flanged bearing,8 mm REX ID; 14 mm OD; 5 mm thick,4,each,goBILDA,11.98,Paper specifies two 2-packs at $5.99 per pack,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Retrofit parts,Bearings,Thrust bearing,12 mm ID; 21 mm OD; 5 mm thick,1,each,goBILDA,4.99,,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Retrofit parts,Motors,NEMA 17 stepper motor,42STH48-1684MAC,2,each,LDO,38.98,$19.49 each,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Retrofit parts,Mounting hardware,Silicone spacer,Bed spacer,4,each,Amazon,3.00,Prorated from a 12-pack costing $8.99,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Retrofit parts,Mounting hardware,M3 standoff,15 mm long,4,each,REV Robotics,2.85,One 4-pack costs $2.85,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Retrofit parts,Mounting hardware,M4 heat-set insert,M4,8,each,CNC Kitchen,1.74,Prorated from a 50-pack costing $10.90,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Retrofit parts,Screws,Screw assortment,8 x M4 x 12 mm; 1 x M3 x 8 mm; 4 x M3 x 35 mm; 1 x M4 x 16 mm,1,set,Bolts and Nuts,2.56,14 screws total; paper provides only the combined cost,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Retrofit parts,Heated platform,Heatbed tile,Heated build platform,1,each,Prusa Research,24.99,,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Retrofit parts,Heated platform,Garolite plate,90 x 90 mm,1,each,Amazon,0.65,Costed by area from two 12 x 12 in sheets costing $15; cutting waste excluded,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Retrofit parts,Printed structure,PLA filament,Complete printed structure; includes fabrication supports,125,g,PLA filament,2.25,Prorated at $17.99 per kg,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Retrofit parts,Connector,Clickmate connector 0151350402,4-pin; 1.5 mm pitch,1,each,Molex,3.69,,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Retrofit parts,JST connectors,JST connector assortment,4 x XHP-3 housings; 1 x XHP-2 housing; 14 crimp contacts,1,set,JST,2.13,Paper provides only the combined cost,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Retrofit parts,Wire,Stranded wire,22 AWG,21.5,ft,Pololu,4.71,Prorated from a 50 ft spool costing $10.95,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Supplied hardware,Base printer,Ender 3 or compatible clone,Base printer budget allocation,1,each,Creality / clone,150.00,Estimated reproduction cost; Ender 3 V2 was used in the prototype,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Supplied hardware,Controller,SKR 1.4 Turbo controller kit,Includes 5 TMC2208 drivers,1,set,BIGTREETECH,65.79,Supplied hardware valued at estimated replacement cost,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Supplied hardware,Host,Pi 4 Model B,4 GB; board only,1,each,Raspberry Pi,100.00,Supplied hardware valued at estimated replacement cost,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Supplied hardware,Homing components,Neodymium disc magnet,12 mm diameter x 3 mm thick,2,each,Amazon,0.67,Prorated from a 30-pack costing $9.99,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
+Supplied hardware,Homing components,Hall-effect sensor,A3144,2,each,Amazon,1.30,Prorated from a 10-pack costing $6.49,https://github.com/Evanston09/pentos_paper/blob/main/main.tex
