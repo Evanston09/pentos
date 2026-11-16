@@ -32,7 +32,7 @@ for name,rec in meta.items():
    if is_a:mc[2]=pmin[2]+6
    else:mc[2]=pmin[2]+1.5
    bpy.ops.mesh.primitive_cylinder_add(vertices=96,radius=.06,depth=.03,location=mc*.01)
-   magnet=bpy.context.object;magnet.name='12 x 3 mm magnet';magnet.data.materials.append(silver)
+   magnet=bpy.context.object;magnet.name='Purchased 12 x 3 mm neodymium magnet';magnet.data.materials.append(silver)
    if is_a:magnet.rotation_euler=(0,math.pi/2,0)
    objs.append(magnet)
    dot=mc.copy()

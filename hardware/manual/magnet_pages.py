@@ -67,9 +67,10 @@ def build(c,text,para):
  for x,name,label in [(M,'a-axis-cradle','A / cradle'),(318,'b-axis-base','B / bed base')]:
   text(x,595,label,13,ORANGE if name.startswith('a-') else BLUE,'Bold')
   image(name+'-full',(x,375,252,205),'pocket')
+ text(M,350,'The disc magnets are purchased components, not 3D-printed parts.',10,INK)
  text(M,323,'Dashed circle = magnet pocket',9,RED,'Bold')
  numbered(294,[
-  '<b>Test each 12 x 3 mm disc magnet with its Hall sensor in the installed orientation.</b> Confirm the homing input triggers near the magnet and releases when removed. Flip the magnet if needed.',
+  '<b>Test each purchased 12 x 3 mm neodymium disc magnet with its Hall sensor.</b> Use the installed sensor orientation. Confirm the homing input triggers near the magnet and releases when removed. Flip the magnet if needed.',
   '<b>Mark the working face TO SENSOR.</b> Point it toward the cradle’s outer end wall (A), or down toward the print bed (B).',
   '<b>Recheck polarity at the print pause.</b> Seat the magnet below the next toolpath before resuming.'
  ],11)
@@ -89,7 +90,7 @@ def build(c,text,para):
   toolpaths(name,rec['last_open_preview_layer'],(M,240,252,132));toolpaths(name,rec['preview_layer'],(318,240,252,132))
   numbered(199,[
    'Select your printer and confirm its pause command. At the first-cover layer, add <b>Insert pause print</b>.',
-   'At the pause, seat the magnet below the next toolpath. Resume to enclose it.'
+   'At the pause, insert the purchased magnet below the next toolpath. Resume to enclose it in plastic.'
   ],10)
   strip(63,'RECHECK POLARITY BEFORE RESUMING.', 'A: marked face toward outer end wall.' if a else 'B: marked face DOWN toward the print bed.')
   footer()

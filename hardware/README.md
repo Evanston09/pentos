@@ -11,21 +11,27 @@ the printable parts, CAD assembly, bill of materials and assembly instructions.
 
 ## What to print
 
-Print **one of each** of these four parts:
+Print **one of each** of these four plastic structural parts:
 
-| Part | Quantity | Model | Embedded magnet |
-| --- | ---: | --- | --- |
-| A-axis cradle | 1 | [3MF](printable-parts/a-axis-cradle.3mf) | One 12 mm diameter x 3 mm disc |
-| A-axis holder, front / drive side | 1 | [3MF](printable-parts/a-axis-holder-front.3mf) | None |
-| A-axis holder, back | 1 | [3MF](printable-parts/a-axis-holder-back.3mf) | None |
-| B-axis bed base | 1 | [3MF](printable-parts/b-axis-base.3mf) | One 12 mm diameter x 3 mm disc |
+| Plastic part | Quantity | Print model |
+| --- | ---: | --- |
+| A-axis cradle | 1 | [3MF](printable-parts/a-axis-cradle.3mf) |
+| A-axis holder, front / drive side | 1 | [3MF](printable-parts/a-axis-holder-front.3mf) |
+| A-axis holder, back | 1 | [3MF](printable-parts/a-axis-holder-back.3mf) |
+| B-axis bed base | 1 | [3MF](printable-parts/b-axis-base.3mf) |
 
 The paper budgets **125 g of PLA, including fabrication supports**, for the
 printed structure. Place the holders on their broad, flat triangular sides;
 place the cradle and bed base on their flat bases. The raw Onshape exports
 are Y-up; a +90-degree rotation about X puts that flat face on the print bed.
 
-### Embed the magnets during printing
+## Purchased disc magnets
+
+Use **two purchased neodymium disc magnets, 12 mm diameter x 3 mm thick**:
+one in the A-axis cradle and one in the B-axis bed base. **The discs are
+magnets, not 3D-printed parts.** Only the surrounding plastic parts are printed.
+
+### Insert the magnets at the print pauses
 
 **Check polarity with the actual Hall sensor before insertion, mark the
 working face TO SENSOR, and check it again before resuming the print.**
@@ -33,7 +39,8 @@ Confirm the homing input triggers near the magnet and releases when removed.
 The marked face points toward the cradle's outer end wall for A, and down
 toward the print bed for B. The manual shows both pocket orientations.
 
-Use these pre-oriented PrusaSlicer reference projects for the two magnet parts:
+Use these pre-oriented PrusaSlicer reference projects for the plastic cradle
+and bed base, which contain pockets for the purchased magnets:
 
 | Part | Reference project | Pause before layer at Z | Object layer | Preview layer |
 | --- | --- | ---: | ---: | ---: |
@@ -75,7 +82,8 @@ the printer's four original M4 countersunk bed screws and leveling knobs.
 ## Assembly
 
 Follow the **[illustrated assembly manual](pentos-assembly-manual.pdf)** after
-printing the magnet-containing parts. It covers the bed, hubs, shafts and
+printing the plastic cradle and base with their purchased magnets embedded.
+It covers the bed, hubs, shafts and
 bearings, both belt drives, Hall sensors, and mounting the completed mechanism
 on the original Y gantry.
 

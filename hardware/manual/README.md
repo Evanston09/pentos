@@ -63,7 +63,9 @@ width is checked against both groove limits; pulley centers are derived from
 the circular flanges rather than the overall part bounding boxes.
 
 Preparations 00, 00A and 00B show polarity testing and separate print-pause guides
-for the actual A cradle and B base. At 0.20 mm first and object layers, verified
+for the plastic A cradle and B base. The two 12 x 3 mm neodymium discs are
+purchased magnets, not printed parts; they are inserted into the plastic pockets
+at the pauses. At 0.20 mm first and object layers, verified
 PrusaSlicer first-cover heights are Z 14.40 mm (A) and Z 4.20 mm (B). Blender
 pocket sections show the tested sensor-facing magnet faces; toolpath panels
 come from actual PrusaSlicer extrusion paths.

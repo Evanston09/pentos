@@ -1,4 +1,8 @@
-# Embedded magnet print preparation
+# Print preparation for magnet pockets
+
+The two 12 mm diameter x 3 mm discs are **purchased neodymium magnets, not
+3D-printed parts**. These projects print the plastic cradle and bed base with
+pockets; insert the purchased magnets during the pauses.
 
 Open these as **projects** in PrusaSlicer (not geometry-only imports):
 
@@ -29,7 +33,7 @@ native Y=0 face on the print bed. In print coordinates the models measure
 210 x 76.65 x 73.5 mm (A) and 70 x 70 x 5 mm (B).
 
 A's rectangular enclosed pocket is 3.2 x 12.2 x 12.2 mm, from print Z 1.9 to
-14.1 mm. Its 12 x 3 mm disc magnet stands vertically, with the tested sensor
+14.1 mm. Its purchased 12 x 3 mm neodymium disc magnet stands vertically, with the tested sensor
 face toward the outer end wall (+X). B's cylindrical pocket is approximately
 12.2 mm diameter x 3.2 mm deep, from Z 0.8 to 4.0 mm. Its magnet lies flat,
 with the tested sensor face DOWN (-Z), toward the print bed and eventual sensor.
@@ -39,8 +43,8 @@ views show the final enclosure and print orientation.
 **Polarity must be tested with the actual Hall sensor and homing input before
 insertion, marked TO SENSOR, and checked again at the print pause.** Do not
 assume a north/south face. Confirm both trigger and release with the sensor
-presented in its final orientation. Finish both magnet-containing prints before
-mechanical assembly.
+presented in its final orientation. Finish printing the plastic cradle and base
+around the inserted magnets before mechanical assembly.
 
 ## Verification and regeneration
 
